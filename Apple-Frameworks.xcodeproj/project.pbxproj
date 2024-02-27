@@ -133,11 +133,11 @@
 		D35FEE212B8867F800E33C6A /* Apple-Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D35FEE222B8867F800E33C6A /* Apple_FrameworksApp.swift */,
 				D328F7CA2B8E947800C1C570 /* UIKit Components */,
 				D328F7C72B8E942100C1C570 /* Views */,
 				D328F7C62B8E940E00C1C570 /* Model */,
 				D328F7C32B8E93AC00C1C570 /* Screens */,
-				D35FEE222B8867F800E33C6A /* Apple_FrameworksApp.swift */,
 				D35FEE262B8867FD00E33C6A /* Assets.xcassets */,
 				D35FEE282B8867FD00E33C6A /* Preview Content */,
 			);

@@ -13,12 +13,12 @@ struct FrameworkDetailView: View {
     
     var framework: Framework
     @State private var isShowingSafariView = false
-    @Binding var isShowingDetailView: Bool
+//    @Binding var isShowingDetailView: Bool
     
     var body: some View {
         VStack {
             
-            XDismissButton(isShowingDetailView: $isShowingDetailView)
+//            XDismissButton(isShowingDetailView: $isShowingDetailView)
             FrameworkTitleView(framework: framework)
             
             Text(framework.description)
@@ -43,5 +43,5 @@ struct FrameworkDetailView: View {
 }
 
 #Preview {
-    FrameworkDetailView(framework: MockData.sampleFramework, isShowingDetailView: .constant(false))
+    FrameworkDetailView(framework: MockData.sampleFramework)
 }
