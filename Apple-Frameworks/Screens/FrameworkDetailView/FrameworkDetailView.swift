@@ -7,28 +7,18 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct FrameworkDetailView: View {
+    
     var framework: Framework
+    @State private var isShowingSafariView = false
     @Binding var isShowingDetailView: Bool
     
     var body: some View {
-        VStack{
-            HStack{
-                Spacer()
-                
-                Button(action: {
-                    isShowingDetailView = false
-                }, label: {
-                    Image(systemName: "xmark")
-                        .foregroundStyle(Color(.label))
-                        .imageScale(.large)
-                        .frame(width: 44, height: 44)
-                })
-            }
-            .padding()
+        VStack {
             
-//            Spacer()
-            
+            XDismissButton(isShowingDetailView: $isShowingDetailView)
             FrameworkTitleView(framework: framework)
             
             Text(framework.description)
@@ -37,9 +27,18 @@ struct FrameworkDetailView: View {
             
             Spacer()
             
-            AFButton(title: "Learn More")
-
+            Button {
+                isShowingSafariView = true
+            } label: {
+                Label("Learn More", systemImage: "book.fill")
+            }
+            .buttonStyle(.bordered)
+            .controlSize(.large)
+            .tint(.red)
         }
+        .fullScreenCover(isPresented: $isShowingSafariView, content: {
+            SafariView(url: URL(string: framework.urlString) ?? URL(string: "www.apple.com")!)
+        })
     }
 }
 
