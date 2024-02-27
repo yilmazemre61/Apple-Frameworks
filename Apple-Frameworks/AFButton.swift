@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct AFButton: View {
+    var title: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            
+        }, label: {
+            Text(title)
+                .font(.title2)
+                .frame(width: 280, height: 50)
+                .fontWeight(.semibold)
+                .background(Color.red)
+                .foregroundStyle(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 30))
+        })
     }
 }
 
 #Preview {
-    AFButton()
+    AFButton(title: "Learn More")
 }
